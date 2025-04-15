@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.env
+.env
+
+# 上傳的檔案和資料 (因為它們應該是動態產生或存在永續儲存區)
+uploads/
+works_data.json
+
+# 其他系統檔案
+.DS_Store

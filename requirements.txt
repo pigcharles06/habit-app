@@ -1,0 +1,6 @@
+Flask
+gunicorn
+Flask-CORS
+python-dotenv
+openai                # Changed from google-generativeai
+Pillow
