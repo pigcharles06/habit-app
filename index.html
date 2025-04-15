@@ -20,30 +20,159 @@
 <body class="font-sans bg-secondary text-text antialiased">
 
     <div id="particles-js"></div>
-    <header class="bg-white shadow-md sticky top-0 z-50"> <nav class="container mx-auto px-6 py-4 flex justify-between items-center"> <a href="#home" class="text-2xl font-bold text-accent hover:text-primary transition duration-300">習慣養成計畫</a> <div class="hidden md:flex space-x-6"> <a href="#home" class="text-gray-600 hover:text-accent transition duration-300">活動首頁</a> <a href="#student-works" class="text-gray-600 hover:text-accent transition duration-300">成果展示/上傳</a> </div> <button id="mobile-menu-button" class="md:hidden lucide text-gray-600 hover:text-accent transition duration-300" aria-label="開啟選單" aria-expanded="false">&#xe9af;</button> </nav> <div id="mobile-menu" class="md:hidden hidden bg-white py-2"> <a href="#home" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-accent">活動首頁</a> <a href="#student-works" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-accent">成果展示/上傳</a> </div> </header>
-    <main> <section id="home" class="container mx-auto px-6 py-16 md:py-24 fade-in"> <div class="flex flex-col md:flex-row items-center gap-12"> <div class="md:w-1/2 text-center md:text-left"> <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">開始建立你的好習慣！</h1> <p class="text-lg text-gray-600 mb-8">分享你的習慣計分卡和創意漫畫，記錄你的成長旅程，一起見證改變的發生。</p> <a href="#student-works" class="inline-block bg-accent text-white font-semibold px-8 py-3 rounded-xl hover:bg-pink-700 transition duration-300 shadow-lg">查看或分享成果</a> </div> <div class="md:w-1/2 w-full mt-8 md:mt-0"> <div id="hero-slideshow"> <div id="slideshow-placeholder" class="flex items-center justify-center w-full h-full text-gray-500 text-lg">正在載入分享...</div> </div> </div> </div> </section> <section id="student-works" class="py-16 md:py-24 border-t border-gray-200"> <div class="container mx-auto px-6"> <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">習慣養成成果展示與分享</h2> <div class="max-w-2xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg mb-16"> <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center">分享我的習慣養成紀錄</h3> <form id="upload-form" class="space-y-4" novalidate> <div> <label for="author-name" class="block text-sm font-medium text-gray-700 mb-1">你的姓名/暱稱：</label> <input type="text" id="author-name" name="author-name" required maxlength="50" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent shadow-sm text-sm" placeholder="請輸入你的姓名或暱稱"> </div> <div> <label for="scorecard-image" class="block text-sm font-medium text-gray-700 mb-1">上傳習慣計分卡圖片：</label> <input type="file" id="scorecard-image" name="scorecard-image" accept="image/png, image/jpeg, image/jpg, image/gif" required class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-accent hover:file:bg-pink-100 transition duration-150 cursor-pointer border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"> <p class="mt-1 text-xs text-gray-500">請選擇 JPG, PNG, GIF 格式。 (必需)</p> </div> <div> <label for="comic-image" class="block text-sm font-medium text-gray-700 mb-1">上傳六格漫畫圖片：</label> <input type="file" id="comic-image" name="comic-image" accept="image/png, image/jpeg, image/jpg, image/gif" required class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-accent hover:file:bg-pink-100 transition duration-150 cursor-pointer border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent"> <p class="mt-1 text-xs text-gray-500">請選擇 JPG, PNG, GIF 格式。 (必需)</p> </div> <div> <label for="current-habits" class="block text-sm font-medium text-gray-700 mb-1">你目前的習慣描述：</label> <textarea id="current-habits" name="current-habits" rows="3" required maxlength="500" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent shadow-sm text-sm" placeholder="描述一下你現在主要關注的習慣是什麼..."></textarea> </div> <div> <label for="reflection" class="block text-sm font-medium text-gray-700 mb-1">反思與展望：</label> <textarea id="reflection" name="reflection" rows="4" required maxlength="1000" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent shadow-sm text-sm" placeholder="這次過程中，你想養成的好習慣、想改掉的壞習慣是什麼？有什麼發現或心得？"></textarea> </div> <div> <button type="submit" class="w-full bg-accent text-white font-semibold px-6 py-3 rounded-xl hover:bg-pink-700 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-70 disabled:cursor-not-allowed">確認分享</button> </div> </form> <div id="upload-status" class="mt-4 text-center text-sm min-h-[1.25em]"></div> </div> <hr class="my-12 border-gray-300"> <h3 class="text-2xl font-semibold text-gray-700 mb-8 text-center">大家的成果</h3> <div id="work-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"> <p id="gallery-placeholder" class="text-center text-gray-500 col-span-full p-6">正在載入成果...</p> </div> </div> </section> </main>
-    <footer class="bg-gray-800 text-gray-300 py-10 mt-16"> <div class="container mx-auto px-6 text-center text-sm"> &copy; 2025 習慣養成計畫. All rights reserved. </div> </footer>
-    <div id="interactive-cat-container" aria-label="互動小貓裝飾"> <img id="interactive-cat-img" src="/static/Box.png" alt="互動小貓"> </div>
 
-    <div id="work-modal" class="modal">
-        <div class="modal-content">
-             <span class="modal-close" aria-label="關閉視窗">&times;</span> <h3 id="modal-author" class="text-center text-2xl font-semibold mb-4">作者名稱</h3> <h4>目前的習慣</h4> <p id="modal-current-habits" class="whitespace-pre-wrap">習慣描述...</p> <h4>反思與展望</h4> <p id="modal-reflection" class="whitespace-pre-wrap">反思內容...</p> <h4>相關圖片 (點擊可放大)</h4> <div class="modal-image-container"> <div class="modal-image-wrapper"> <img id="modal-scorecard-image" src="" alt="習慣計分卡" class="modal-image--clickable" data-original-src=""> <span>習慣計分卡</span> </div> <div class="modal-image-wrapper"> <img id="modal-comic-image" src="" alt="六格漫畫" class="modal-image--clickable" data-original-src=""> <span>六格漫畫</span> </div> </div>
-            <hr class="my-6 border-gray-200">
-            <div class="ai-analysis-section">
-                  <h4 class="flex items-center justify-between"> <span>AI 助教分析 (GPT-4.1)</span> <button id="analyze-button" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"> 點擊分析 </button> </h4> <div id="analysis-loading" class="text-center text-gray-500 my-3 hidden">正在分析中，請稍候... <span class="spinner"></span></div> <div id="analysis-error" class="text-center text-red-600 my-3 hidden"></div>
-                <div id="analysis-result-container" class="mt-2 hidden">
-                    <div id="analysis-result" class="prose prose-sm max-w-none p-3 bg-gray-100 rounded-lg text-sm max-h-[300px] overflow-y-auto border border-gray-200"></div>
-                    <audio id="analysis-audio-player" class="hidden" controls preload="metadata"></audio>
-                      <button id="read-aloud-button" class="mt-3 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-lg transition duration-200 flex items-center justify-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed"> <span class="lucide">&#xea0c;</span> 朗讀回饋 </button> <button id="stop-reading-button" class="mt-3 ml-2 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold px-4 py-1 rounded-lg transition duration-200 hidden items-center justify-center gap-1"> <span class="lucide">&#xea13;</span> 停止朗讀 </button>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-accent hover:text-primary transition duration-300">習慣養成計畫</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-accent transition duration-300">活動首頁</a>
+                <a href="#student-works" class="text-gray-600 hover:text-accent transition duration-300">成果展示/上傳</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden lucide text-gray-600 hover:text-accent transition duration-300" aria-label="開啟選單" aria-expanded="false">&#xe9af;</button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-2">
+            <a href="#home" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-accent">活動首頁</a>
+            <a href="#student-works" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 hover:text-accent">成果展示/上傳</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="container mx-auto px-6 py-16 md:py-24 fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">開始建立你的好習慣！</h1>
+                    <p class="text-lg text-gray-600 mb-8">分享你的習慣計分卡和創意漫畫，記錄你的成長旅程，一起見證改變的發生。</p>
+                    <a href="#student-works" class="inline-block bg-accent text-white font-semibold px-8 py-3 rounded-xl hover:bg-pink-700 transition duration-300 shadow-lg">查看或分享成果</a>
                 </div>
-            </div> </div>
+                <div class="md:w-1/2 w-full mt-8 md:mt-0">
+                    <div id="hero-slideshow">
+                        <div id="slideshow-placeholder" class="flex items-center justify-center w-full h-full text-gray-500 text-lg">正在載入分享...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="student-works" class="py-16 md:py-24 border-t border-gray-200">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">習慣養成成果展示與分享</h2>
+
+                <div class="max-w-2xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg mb-16">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-6 text-center">分享我的習慣養成紀錄</h3>
+                    <form id="upload-form" class="space-y-4" novalidate>
+                        <div>
+                            <label for="author-name" class="block text-sm font-medium text-gray-700 mb-1">你的姓名/暱稱：</label>
+                            <input type="text" id="author-name" name="author-name" required maxlength="50" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent shadow-sm text-sm" placeholder="請輸入你的姓名或暱稱">
+                        </div>
+                        <div>
+                            <label for="scorecard-image" class="block text-sm font-medium text-gray-700 mb-1">上傳習慣計分卡圖片：</label>
+                            <input type="file" id="scorecard-image" name="scorecard-image" accept="image/png, image/jpeg, image/jpg, image/gif" required class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-accent hover:file:bg-pink-100 transition duration-150 cursor-pointer border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent">
+                            <p class="mt-1 text-xs text-gray-500">請選擇 JPG, PNG, GIF 格式。 (必需)</p>
+                        </div>
+                        <div>
+                            <label for="comic-image" class="block text-sm font-medium text-gray-700 mb-1">上傳六格漫畫圖片：</label>
+                            <input type="file" id="comic-image" name="comic-image" accept="image/png, image/jpeg, image/jpg, image/gif" required class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-accent hover:file:bg-pink-100 transition duration-150 cursor-pointer border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent">
+                            <p class="mt-1 text-xs text-gray-500">請選擇 JPG, PNG, GIF 格式。 (必需)</p>
+                        </div>
+                        <div>
+                            <label for="current-habits" class="block text-sm font-medium text-gray-700 mb-1">你目前的習慣描述：</label>
+                            <textarea id="current-habits" name="current-habits" rows="3" required maxlength="500" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent shadow-sm text-sm" placeholder="描述一下你現在主要關注的習慣是什麼..."></textarea>
+                        </div>
+                        <div>
+                            <label for="reflection" class="block text-sm font-medium text-gray-700 mb-1">反思與展望：</label>
+                            <textarea id="reflection" name="reflection" rows="4" required maxlength="1000" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent shadow-sm text-sm" placeholder="這次過程中，你想養成的好習慣、想改掉的壞習慣是什麼？有什麼發現或心得？"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-accent text-white font-semibold px-6 py-3 rounded-xl hover:bg-pink-700 transition duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-70 disabled:cursor-not-allowed">確認分享</button>
+                        </div>
+                    </form>
+                    <div id="upload-status" class="mt-4 text-center text-sm min-h-[1.25em]"></div>
+                </div>
+
+                <hr class="my-12 border-gray-300">
+
+                <h3 class="text-2xl font-semibold text-gray-700 mb-8 text-center">大家的成果</h3>
+                <div id="work-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <p id="gallery-placeholder" class="text-center text-gray-500 col-span-full p-6">正在載入成果...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-10 mt-16">
+        <div class="container mx-auto px-6 text-center text-sm">
+            &copy; 2025 習慣養成計畫. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="interactive-cat-container" aria-label="互動小貓裝飾">
+        <img id="interactive-cat-img" src="/static/Box.png" alt="互動小貓">
     </div>
 
-    <div id="image-lightbox" class="lightbox"> <span class="lightbox-close" aria-label="關閉圖片">&times;</span> <img class="lightbox-content" id="lightbox-img" src="" alt="放大圖片"> <div class="lightbox-caption" id="lightbox-caption">圖片說明</div> </div>
+    <div id="work-modal" class="modal">
+        <div class="modal-content"> <span class="modal-close" aria-label="關閉視窗">&times;</span>
+             <h3 id="modal-author" class="text-center text-2xl font-semibold mb-4">作者名稱</h3>
+             <h4>目前的習慣</h4>
+             <p id="modal-current-habits" class="whitespace-pre-wrap">習慣描述...</p>
+             <h4>反思與展望</h4>
+             <p id="modal-reflection" class="whitespace-pre-wrap">反思內容...</p>
+             <h4>相關圖片 (點擊可放大)</h4>
+             <div class="modal-image-container">
+                 <div class="modal-image-wrapper">
+                     <img id="modal-scorecard-image" src="" alt="習慣計分卡" class="modal-image--clickable" data-original-src="">
+                     <span>習慣計分卡</span>
+                 </div>
+                 <div class="modal-image-wrapper">
+                     <img id="modal-comic-image" src="" alt="六格漫畫" class="modal-image--clickable" data-original-src="">
+                     <span>六格漫畫</span>
+                 </div>
+             </div>
+             </div>
+    </div> <div id="image-lightbox" class="lightbox">
+        <span class="lightbox-close" aria-label="關閉圖片">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="放大圖片">
+        <div class="lightbox-caption" id="lightbox-caption">圖片說明</div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="ai-chat-widget" class="fixed bottom-5 right-5 w-80 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 z-50 flex flex-col">
+        <div class="flex justify-between items-center p-3 bg-accent text-white rounded-t-lg cursor-pointer" id="chat-widget-header">
+            <h4 class="text-base font-semibold">AI 助教</h4>
+            <button id="chat-widget-toggle" class="text-white hover:bg-pink-700 p-1 rounded-full" aria-label="最小化聊天室">
+                <span class="lucide text-lg">&#xea76;</span> </button>
+        </div>
+
+        <div id="chat-widget-content" class="p-4 flex-grow overflow-y-auto" style="max-height: calc(100vh - 150px);"> <p id="chat-info-text" class="text-sm text-gray-500 mb-3">請先點開一個學生的作品，然後點擊下方按鈕進行分析。</p>
+
+            <div class="ai-analysis-section">
+                 <button id="analyze-button-chat" class="w-full bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-wait mb-3 flex items-center justify-center gap-2">
+                     <span class="lucide">&#xea7d;</span> 分析當前作品
+                 </button>
+
+                 <div id="analysis-loading-chat" class="text-center text-gray-500 my-3 hidden">正在分析中... <span class="spinner"></span></div>
+                 <div id="analysis-error-chat" class="text-center text-red-600 my-3 p-2 bg-red-50 border border-red-200 rounded hidden"></div>
+
+                 <div id="analysis-result-container-chat" class="mt-2 hidden">
+                     <div id="analysis-result-chat" class="prose prose-sm max-w-none p-3 bg-gray-50 rounded-lg text-sm border border-gray-200 mb-3" style="max-height: 250px; overflow-y: auto;">
+                         </div>
+
+                     <div class="flex items-center justify-between gap-2 mt-2">
+                         <button id="read-aloud-button-chat" class="flex-1 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition duration-200 flex items-center justify-center gap-1 disabled:opacity-50 disabled:cursor-not-allowed">
+                             <span class="lucide text-base">&#xea0c;</span> 朗讀
+                         </button>
+                         <button id="stop-reading-button-chat" class="flex-1 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition duration-200 hidden items-center justify-center gap-1">
+                             <span class="lucide text-base">&#xea13;</span> 停止
+                         </button>
+                         <label class="flex items-center text-xs text-gray-600 cursor-pointer whitespace-nowrap" title="分析完成後自動播放語音">
+                             <input type="checkbox" id="autoplay-audio-checkbox" class="mr-1 h-3.5 w-3.5 rounded border-gray-300 text-accent focus:ring-accent"> 自動播放
+                         </label>
+                     </div>
+                     <audio id="analysis-audio-player-chat" class="hidden" preload="none"></audio> </div>
+            </div>
+             </div> </div> <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="/static/js/utils.js" defer></script>
     <script src="/static/js/ui.js" defer></script>
-    <script src="/static/js/gallery.js" defer></script> <script src="/static/js/keep-alive.js" defer></script>
-    <script src="/static/js/main.js" defer></script> </body>
+    <script src="/static/js/chatWidget.js" defer></script>
+    <script src="/static/js/gallery.js" defer></script>
+    <script src="/static/js/keep-alive.js" defer></script>
+    <script src="/static/js/main.js" defer></script>
+</body>
 </html>
